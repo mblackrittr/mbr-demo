@@ -1,0 +1,71 @@
+{
+  "name": "eslint-ts-patch",
+  "type": "commonjs",
+  "version": "8.57.0-0",
+  "packageManager": "pnpm@8.12.1",
+  "description": "Support eslint.config.mjs and eslint.config.ts for ESLint",
+  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "scripts": {
+    "lint": "eslint-ts .",
+    "release": "bumpp && npm publish",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "_prepare": "simple-git-hooks"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "eslint": "^8.57.0",
+    "jiti": "^1.21.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@antfu/ni": "^0.21.12",
+    "@types/eslint": "^8.56.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.20",
+    "bumpp": "^9.3.0",
+    "esno": "^4.0.0",
+    "execa": "^8.0.1",
+    "fs-extra": "^11.2.0",
+    "lint-staged": "^15.2.2",
+    "pnpm": "^8.15.4",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1"
+  },
+  "COMMENT": {
+    "eslint-ts-patch": "workspace:*",
+    "eslint": "^8.57.0"
+  },
+  "bin": {
+    "eslint": "./bin/eslint.js",
+    "eslint-ts": "./bin/eslint.js"
+  },
+  "bugs": "https://github.com/antfu/eslint-ts-patch/issues",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./lib/api.js",
+    "./register": "./lib/register.js",
+    "./use-at-your-own-risk": "./lib/unsupported-api.js"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "funding": "https://github.com/sponsors/antfu",
+  "homepage": "https://github.com/antfu/eslint-ts-patch#readme",
+  "keywords": [
+    "eslint"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*": "eslint-ts --fix"
+  },
+  "main": "./lib/api.js",
+  "repository": "antfu/eslint-ts-patch.git",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  }
+}

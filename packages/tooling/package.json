@@ -1,0 +1,13 @@
+{
+  "name": "@mbr/tooling",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tooling(s) for MBR packages - Ansible, Git, Hygen, ...",
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

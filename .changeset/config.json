@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
+  "!COMMENT zLabs | Black | 2024-03-14 12:36": "This imports/exports `@changesets/changelog-git`. Likely to implement own one, e.g. see https://github.com/urql-graphql/urql/blob/83f515539b283881aa79a8609e1fa816dc750039/scripts/changesets/changelog.js",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "master",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

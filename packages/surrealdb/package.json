@@ -1,0 +1,26 @@
+{
+  "name": "@mbr/surrealdb",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "SurrealDB-WASM wrapper",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "surrealdb.wasm": "0.8.0",
+    "vite-plugin-top-level-await": "1.4.1"
+  },
+  "devDependencies": {
+    "typescript": "5.3.3",
+    "vite": "5.1.4"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "overrides": {
+    "eslint": "8.55.0"
+  }
+}

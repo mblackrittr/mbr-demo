@@ -1,0 +1,14 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    // zLabs | Black
+    // Fixes lint errors like `import { surrealdb } from '@mbr/surrealdb'`
+    // Nuxt uses just `node`, see `"moduleResolution": "Node"` in `./.nuxt/tsconfig.json`
+    // Vite default uses `bundler`
+    // DODO: Check what's "wrong" within `surrealdb.wasm`, why it's giving this, even if working anyway.
+    // https://www.typescriptlang.org/tsconfig#moduleResolution
+    // UPDATE (2024-02-20 02:59): Seems like some Nuxt update resolved this already:
+    // https://nuxt.com/docs/guide/going-further/features#typescriptbundlerresolution
+    // "moduleResolution": "Bundler"
+  }
+}

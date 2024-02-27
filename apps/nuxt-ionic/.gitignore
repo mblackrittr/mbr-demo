@@ -1,0 +1,20 @@
+node_modules
+*.log
+dist
+.output
+.nuxt
+.env
+.idea/
+
+
+# zLabs | Black
+
+## Bun - No bloating lock-files...
+bun.lockb
+
+## Capacitor
+android
+ios
+
+# Ultra Runnder
+.ultra.cache.json

@@ -1,0 +1,7 @@
+{
+  "name": "MBR | N U X O N I C",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

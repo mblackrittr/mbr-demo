@@ -1,0 +1,4 @@
+# DODO (2024-02-27 07:10): Add `lint:staged` to `scripts` and change to `npm run lint:staged`
+# DONE (2024-02-27 07:22)
+# npm exec lint-staged --verbose
+npm run lint:staged

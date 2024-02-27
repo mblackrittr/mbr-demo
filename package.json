@@ -1,0 +1,76 @@
+{
+  "name": "@mbr/root-demo",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "bun@1.0.25",
+  "description": "DevOps focusses monorepo base",
+  "author": "",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "!DDDO: build": "turbo run build",
+    "!DDDO: dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "!DDDO: lint": "turbo run lint",
+    "lint:staged": "lint-staged --verbose",
+    "lint:commit": "commitlint --verbose --edit",
+    "ncu": "ncu --workspaces --root",
+    "ncuu": "ncu --workspaces --root -u",
+    "spl": "syncpack lint",
+    "spf": "syncpack format && syncpack set-semver-ranges && syncpack fix-mismatches",
+    "prepare": "husky",
+    "cs": "changeset",
+    "css": "changeset status --verbose",
+    "commit": "cz"
+  },
+  "!COMMENT (2024-02-26 00:47)": "zLabs | Black | Moved all `eslint` from `@mbr/nuxonic` here to root",
+  "!COMMENT (2024-02-29 02:48)": "zLabs | Black | Having `\"eslint-ts-patch\": \"8.57.0-0\"` seems to be of importance, e.g. without, Bun sometimes got stuck on `Resolve...` for `eslint-ts-patch`",
+  "!COMMENT (2024-03-01 07:55)": "zLabs | Black | UPDATE: But then `bun install` in root `/` gives `error: No version matching \"8.57.0-0\" found for specifier \"eslint-ts-patch\"` ...",
+  "!COMMENT (2024-03-22 23:02)": "zLabs | Black | `\"snyk\": \"1.1285.0\"` - Can it be that Snyk fetched its ~100MB binary each time again if we recreate `node_modules?!",
+  "devDependencies": {
+    "@antfu/eslint-config": "2.6.4",
+    "@changesets/cli": "2.27.1",
+    "@commitlint/cli": "18.6.1",
+    "@commitlint/config-conventional": "18.6.2",
+    "@commitlint/config-pnpm-scopes": "18.6.1",
+    "@commitlint/cz-commitlint": "18.6.1",
+    "@tsconfig/node-lts-strictest-esm": "18.12.1",
+    "@types/eslint__eslintrc": "2.1.1",
+    "@types/lodash.merge": "4.6.9",
+    "changeset-conventional-commits": "0.2.4",
+    "commitizen": "4.3.0",
+    "conventional-changelog-atom": "4.0.0",
+    "dotenv-cli": "7.4.1",
+    "eslint": "npm:eslint-ts-patch@8.57.0-0",
+    "eslint-plugin-format": "0.1.0",
+    "eslint-plugin-sonarjs": "0.24.0",
+    "husky": "9.0.11",
+    "hygen": "6.2.11",
+    "inquirer": "8.2.5",
+    "lint-staged": "15.2.2",
+    "lodash.merge": "4.6.2",
+    "npm-check-updates": "16.14.15",
+    "nuxt-module-eslint-config": "0.1.0",
+    "prettier": "3.2.5",
+    "syncpack": "12.3.0",
+    "ts-node-dev": "2.0.0",
+    "turbo": "1.12.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "pnpm": {
+    "!COMMENT (2024-03-01 11:07)": "Required if `.npmrc` not set to `shamefully-hoist=true` (which ultimately's surely preferred), because something sets it to `2.0`, which is just an empty `DEPRECATED` shell! 🙀",
+    "overrides": {
+      "h3": "1.10.2"
+    }
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

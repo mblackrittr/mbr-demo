@@ -1,0 +1,37 @@
+%YAML 1.2
+---
+# SurrealDB JSONAPI
+
+meta:
+  title: SurrealDB JSONAPI
+    - type: [person, author]
+      data:
+        - type: name
+          data: Michael Black Ritter
+        - type: email
+          data: Michael Black Ritter <mblackritter@gmail.com>
+    - type: [url]
+      data:
+        - type: [homepage]
+          data: https://surrealdb-jsonapi.github.com
+        - type: [repo, github]
+          data: https://github.com/zypolabs/surrealdb-jsonapi
+
+functions:
+  - title: Query
+    type: core
+    query: |
+'DEFINE FUNCTION fn::z:jsonapi:query($query: object, $options: object) {
+    LET $data = ${ztest()};
+
+    return $data
+  }'
+  - title: 
+    type: extension
+    config:
+      - keyOne: valueOne
+        keyTwo: valueTwo
+    query: 
+    }
+  ]
+}
